@@ -27,51 +27,14 @@
   exports.Car = Car;
 })(this);
 
-car = new Car("Toyota", "Rav4", 2016);
+// var car = new Car("Toyota", "Rav4", 2016);
 
-console.log(car);
+// console.log(car);
 
-car.drive(20);
-console.log(car.mileage);
-car.drive(80);
-console.log(car.mileage);
-
-
-
-
-
-
-
-
-
-// (function(exports) {
-//   "use strict";
-
-// function Car(make, model, year) {
-//   this.make = make;
-//   this.model = model;
-//   this.year = year || 2018;
-//   this.drive = function(mileage) {
-//       if (!target)
-//         throw new Error("missing target");
-//       return this.name + " greets " + target;
-//     }
-//   }
-
-
-
-// function drive(mileage) {
-// if (!mileage || mileage <= 0)
-// throw Error("some interesting error message");
-//   return numberMiles = numberMiles + mileage;
-// }
-
-
-
-
-
-
-
+// car.drive(20);
+// console.log(car.mileage);
+// car.drive(80);
+// console.log(car.mileage);
 
 // cow.js
 // (function(exports) {

@@ -14,7 +14,7 @@ describe("Car", function() {
       expect(car.model).to.equal("Rav4");
     });
 
-     it("should have year stored in year", function() {
+     it("should have year stored in year/", function() {
       var car = new Car("Toyota", "Rav4", 2016);
       expect(car.year).to.equal(2016);
     }); 
@@ -61,6 +61,55 @@ describe("drive", function() {
     
   });
 
+describe("driveForSomeTime", function() {
+    
+    it("Verify that positive miles/second then the car drives the appropriate amount of miles", function() {
+      var car = new Car();
+      car.driveForSomeTime(3000,600,function() {
+        expect(car.mileage).to.equal(1500);
+      });
+      });
+
+     it("should throw an error if a negative number is passed in for seconds to drive for", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime(-1,1);
+      }).to.throw(Error);
+
+    });
+
+     it("should throw an error if a negative number is passed in for miles per second", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime(1,-1);
+      }).to.throw(Error);
+
+    });
+
+     it("should throw an error if zero is passed in for seconds to drive for", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime(0,1);
+      }).to.throw(Error);
+    });
+
+    it("should throw an error if zero is passed in for miles per second", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime(1,0);
+      }).to.throw(Error);
+    }); 
+
+    it("should throw an error if blank is passed in for seconds to drive for", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime("",1);
+      }).to.throw(Error);
+    }); 
+
+    it("should throw an error if blank is passed in for miles per second", function() {
+      expect(function() {
+        (new Car()).driveForSomeTime(1,"");
+      }).to.throw(Error);
+    }); 
+
+    
+  });
   });
 
 
